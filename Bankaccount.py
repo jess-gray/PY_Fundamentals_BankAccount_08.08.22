@@ -1,3 +1,5 @@
+
+
 class BankAccount:
     bank_balance = 0
     bank_interest = 0.01
@@ -32,28 +34,23 @@ class BankAccount:
 Checking = BankAccount(BankAccount.bank_interest, 800)
 Savings = BankAccount(BankAccount.bank_interest, 300)
 
+class User:
 
-Checking.deposit(40).deposit(500).deposit(10).withdraw(2000).display_account_info()
-Savings.deposit(500).deposit(300).withdraw(50).withdraw(60).withdraw(40).withdraw(100).yeild_interest().display_account_info()
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        self.account = BankAccount(init_rate=0.02, balance=0)
 
-# Checking.deposit(40)
-# Checking.display_account_info()
-# Checking.deposit(500)
-# Checking.display_account_info()
-# Checking.deposit(10)
-# Checking.display_account_info()
-# Checking.withdraw(2000)
-# Checking.display_account_info()
-# Checking.yeild_interest()
-# Checking.display_account_info()
+    def make_deposit(self):
+        self.account.deposit(100)
+        print(self.account.balance)
+        return
 
+    def make_withdraw(self, amount):
+        self.account.withdraw(amount)
+        return
+    
+    def display_user_balance(self):
+        self.account.display_account_info
+        return
 
-
-# Savings.deposit(500)
-# Savings.deposit(300)
-# Savings.withdraw(50)
-# Savings.withdraw(60)
-# Savings.withdraw(40)
-# Savings.withdraw(100)
-# Savings.yeild_interest()
-# Savings.display_account_info()
