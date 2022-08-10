@@ -41,16 +41,24 @@ class User:
         self.email = email
         self.account = BankAccount(init_rate=0.02, balance=0)
 
-    def make_deposit(self):
-        self.account.deposit(100)
+    def make_deposit(self, amount):
+        self.account.deposit(amount)
         print(self.account.balance)
-        return
+        return self
 
     def make_withdraw(self, amount):
         self.account.withdraw(amount)
-        return
+        return self
     
     def display_user_balance(self):
-        self.account.display_account_info
-        return
+        self.account.display_account_info()
+        return self
 
+#Checking code is working
+
+Amy = User('Amy','gray@yahoo.com')
+Lori = User('Lori', 'Poland@yahoo.com')
+
+Amy.make_deposit(50)
+
+print(Amy.display_user_balance)
